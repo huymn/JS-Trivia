@@ -14,9 +14,9 @@ Will be stored and hosted on @huymn GitHub. Programming language will consist of
 
 ## Schedule:
 ### 1/12/2022
-* Set up server
-* Set up home page
-* Set up about page
+* Set up server :heavy_check_mark:
+* Set up home page :heavy_check_mark:
+* Set up about page :heavy_check_mark:
 ### 1/13/2022
 * Set up navigation bar
 * Start on 10 questions game
