@@ -1,0 +1,14 @@
+p {
+    color: black;
+    font-size: 17px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-decoration: underline;
+}
