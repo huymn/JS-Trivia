@@ -1,0 +1,14 @@
+{
+  "name": "js-trivia",
+  "version": "1.0.0",
+  "description": "JS Trivia game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "@huymn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
