@@ -10,7 +10,7 @@ There wil be 2 game modes:
 This game will use the api from the web https://opentdb.com/api_config.php
 
 ## Design:
-Will be stored and hosted on @huymn GitHub. Programming language will consist of vanilla JavaScript, HTML, and CSS. No other libraries. This project is to focus on developing JavaScript skills without using libraries.
+Will be stored and hosted on @huymn GitHub. Programming language will consist of vanilla JavaScript, HTML, and CSS. Node and Express will only be use to start the server. This project is to focus on developing JavaScript skills without using libraries.
 
 ## Schedule:
 ### 1/12/2022
