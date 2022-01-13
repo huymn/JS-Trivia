@@ -1,6 +1,7 @@
 p {
     color: black;
     font-size: 17px;
+    padding: 10px;
 }
 
 .container {
@@ -11,4 +12,5 @@ p {
 
 h1 {
     text-decoration: underline;
+    padding: 10px;
 }

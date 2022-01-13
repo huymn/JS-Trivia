@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: aquamarine;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
