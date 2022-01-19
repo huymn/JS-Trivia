@@ -12,6 +12,10 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname+'/about.html'));
 })
 
+app.get('/game', (req, res) => {
+    res.sendFile(path.join(__dirname+'/game.html'));
+})
+
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', router);
