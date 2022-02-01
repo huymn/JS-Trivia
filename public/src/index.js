@@ -17,17 +17,122 @@ async function fetchData() {
 
 //Main function for the game
 fetchData().then((res) => {
+    //Log to check
     console.log(res[currQuestionNum])
-    questionHeader.innerHTML = res[currQuestionNum].question
-    firstOption.innerHTML = res[currQuestionNum].correct_answer
-    secondOption.innerHTML = res[currQuestionNum].incorrect_answers[0]
-    thirdOption.innerHTML = res[currQuestionNum].incorrect_answers[1]
-    fourthOption.innerHTML = res[currQuestionNum].incorrect_answers[2]
+
+    //Current question
+    let question = res[currQuestionNum].question
+
+    //Correct answer
+    let correctAnswer = res[currQuestionNum].correct_answer
+
+    //All answers
+    let answers = res[currQuestionNum].incorrect_answers
+    answers.push(correctAnswer)
+
+    //Initial display update
+    update(question, shuffle(answers))
+
+    //Variable to track which option the user picked
+    let selectedAnswer = "";
+
+    //When "A" is picked
     firstOption.addEventListener('click', () => {
-        if(checkAnswer(res[currQuestionNum].correct_answer, res[currQuestionNum].correct_answer)) {
+        selectedAnswer = firstOption.innerHTML
+        if(checkAnswer(selectedAnswer, correctAnswer)) {
             currQuestionNum++;
             console.log("clicked");
-            update(res[currQuestionNum].question, res[currQuestionNum].correct_answer, res[currQuestionNum].incorrect_answers)
+            console.log(res[currQuestionNum])
+            //Next question
+            question = res[currQuestionNum].question
+
+            //Next correct answer
+            correctAnswer = res[currQuestionNum].correct_answer
+
+            //Next answer choices
+            answers = res[currQuestionNum].incorrect_answers
+            answers.push(correctAnswer)
+
+            //Update the UI
+            update(question, shuffle(answers))
+        }
+        else {
+            console.log("you picked the wrong answer")
+        }
+    })
+
+    //When "B" is picked
+    secondOption.addEventListener('click', () => {
+        selectedAnswer = secondOption.innerHTML
+        if(checkAnswer(selectedAnswer, correctAnswer)) {
+            currQuestionNum++;
+            console.log("clicked");
+            console.log(res[currQuestionNum])
+            //Next question
+            question = res[currQuestionNum].question
+
+            //Next correct answer
+            correctAnswer = res[currQuestionNum].correct_answer
+
+            //Next answer choices
+            answers = res[currQuestionNum].incorrect_answers
+            answers.push(correctAnswer)
+
+            //Update the UI
+            update(question, shuffle(answers))
+        }
+        else {
+            console.log("you picked the wrong answer")
+        }
+    })
+
+    //When "C" is picked
+    thirdOption.addEventListener('click', () => {
+        selectedAnswer = thirdOption.innerHTML
+        if(checkAnswer(selectedAnswer, correctAnswer)) {
+            currQuestionNum++;
+            console.log("clicked");
+            console.log(res[currQuestionNum])
+            //Next question
+            question = res[currQuestionNum].question
+
+            //Next correct answer
+            correctAnswer = res[currQuestionNum].correct_answer
+
+            //Next answer choices
+            answers = res[currQuestionNum].incorrect_answers
+            answers.push(correctAnswer)
+
+            //Update the UI
+            update(question, shuffle(answers))
+        }
+        else {
+            console.log("you picked the wrong answer")
+        }
+    })
+
+    //When "D" is picked
+    fourthOption.addEventListener('click', () => {
+        selectedAnswer = fourthOption.innerHTML
+        if(checkAnswer(selectedAnswer, correctAnswer)) {
+            currQuestionNum++;
+            console.log("clicked");
+            console.log(res[currQuestionNum])
+            //Next question
+            question = res[currQuestionNum].question
+
+            //Next correct answer
+            correctAnswer = res[currQuestionNum].correct_answer
+
+            //Next answer choices
+            answers = res[currQuestionNum].incorrect_answers
+            answers.push(shuffle(answers))
+
+            //Update the UI
+            update(question, answers)
+        }
+        else {
+            console.log("you picked the wrong answer")
         }
     })
 })
@@ -39,11 +144,31 @@ const checkAnswer = (choice, answer) => {
 
 
 //Update the page with new questions and set of answers
-const update = (question, correctAns, wrongAns) => {
+const update = (question, answers) => {
     questionHeader.innerHTML = question
-    firstOption.innerHTML = correctAns
-    secondOption.innerHTML = wrongAns[0]
-    thirdOption.innerHTML = wrongAns[1]
-    fourthOption.innerHTML = wrongAns[3]
+    firstOption.innerHTML = answers[0]
+    secondOption.innerHTML = answers[1]
+    thirdOption.innerHTML = answers[2]
+    fourthOption.innerHTML = answers[3]
+}
+
+//Shuffle array of answers
+//Found from this stackoverflow: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+const shuffle = (array) => {
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
 }
 
