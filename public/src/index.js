@@ -38,101 +38,125 @@ fetchData().then((res) => {
 
     //When "A" is picked
     firstOption.addEventListener('click', () => {
-        selectedAnswer = firstOption.innerHTML
-        if(checkAnswer(selectedAnswer, correctAnswer)) {
-            currQuestionNum++;
-            console.log("clicked");
-            console.log(res[currQuestionNum])
-            //Next question
-            question = res[currQuestionNum].question
-
-            //Next correct answer
-            correctAnswer = res[currQuestionNum].correct_answer
-
-            //Next answer choices
-            let newAnswers = res[currQuestionNum].incorrect_answers
-            newAnswers.push(correctAnswer)
-
-            //Update the UI
-            update(question, shuffle(newAnswers))
+        //Check if the user has answer 10 questions
+        if(checkEndGame(currQuestionNum)) {
+            console.log("You've won")
         }
         else {
-            console.log("you picked the wrong answer")
+            selectedAnswer = firstOption.innerHTML
+            if(checkAnswer(selectedAnswer, correctAnswer)) {
+                currQuestionNum++;
+                console.log("clicked");
+                console.log(res[currQuestionNum])
+                //Next question
+                question = res[currQuestionNum].question
+    
+                //Next correct answer
+                correctAnswer = res[currQuestionNum].correct_answer
+    
+                //Next answer choices
+                let newAnswers = res[currQuestionNum].incorrect_answers
+                newAnswers.push(correctAnswer)
+    
+                //Update the UI
+                update(question, shuffle(newAnswers))
+            }
+            else {
+                console.log("you picked the wrong answer")
+            }
         }
     })
 
     //When "B" is picked
     secondOption.addEventListener('click', () => {
-        selectedAnswer = secondOption.innerHTML
-        if(checkAnswer(selectedAnswer, correctAnswer)) {
-            currQuestionNum++;
-            console.log("clicked");
-            console.log(res[currQuestionNum])
-            //Next question
-            question = res[currQuestionNum].question
-
-            //Next correct answer
-            correctAnswer = res[currQuestionNum].correct_answer
-
-            //Next answer choices
-            let newAnswers = res[currQuestionNum].incorrect_answers
-            newAnswers.push(correctAnswer)
-
-            //Update the UI
-            update(question, shuffle(newAnswers))
+        //Check if the user has answer 10 questions
+        if(checkEndGame(currQuestionNum)) {
+            console.log("You've won")
         }
         else {
-            console.log("you picked the wrong answer")
+            selectedAnswer = secondOption.innerHTML
+            if(checkAnswer(selectedAnswer, correctAnswer)) {
+                currQuestionNum++;
+                console.log("clicked");
+                console.log(res[currQuestionNum])
+                //Next question
+                question = res[currQuestionNum].question
+    
+                //Next correct answer
+                correctAnswer = res[currQuestionNum].correct_answer
+    
+                //Next answer choices
+                let newAnswers = res[currQuestionNum].incorrect_answers
+                newAnswers.push(correctAnswer)
+    
+                //Update the UI
+                update(question, shuffle(newAnswers))
+            }
+            else {
+                console.log("you picked the wrong answer")
+            }
         }
     })
 
     //When "C" is picked
     thirdOption.addEventListener('click', () => {
-        selectedAnswer = thirdOption.innerHTML
-        if(checkAnswer(selectedAnswer, correctAnswer)) {
-            currQuestionNum++;
-            console.log("clicked");
-            console.log(res[currQuestionNum])
-            //Next question
-            question = res[currQuestionNum].question
-
-            //Next correct answer
-            correctAnswer = res[currQuestionNum].correct_answer
-
-            //Next answer choices
-            let newAnswers = res[currQuestionNum].incorrect_answers
-            newAnswers.push(correctAnswer)
-
-            //Update the UI
-            update(question, shuffle(newAnswers))
+        //Check if the user has answer 10 questions
+        if(checkEndGame(currQuestionNum)) {
+            console.log("You've won")
         }
         else {
-            console.log("you picked the wrong answer")
+            selectedAnswer = thirdOption.innerHTML
+            if(checkAnswer(selectedAnswer, correctAnswer)) {
+                currQuestionNum++;
+                console.log("clicked");
+                console.log(res[currQuestionNum])
+                //Next question
+                question = res[currQuestionNum].question
+    
+                //Next correct answer
+                correctAnswer = res[currQuestionNum].correct_answer
+    
+                //Next answer choices
+                let newAnswers = res[currQuestionNum].incorrect_answers
+                newAnswers.push(correctAnswer)
+    
+                //Update the UI
+                update(question, shuffle(newAnswers))
+            }
+            else {
+                console.log("you picked the wrong answer")
+            }
         }
     })
 
     //When "D" is picked
     fourthOption.addEventListener('click', () => {
-        selectedAnswer = fourthOption.innerHTML
-        if(checkAnswer(selectedAnswer, correctAnswer)) {
-            currQuestionNum++;
-            console.log("clicked");
-            console.log(res[currQuestionNum])
-            //Next question
-            question = res[currQuestionNum].question
-
-            //Next correct answer
-            correctAnswer = res[currQuestionNum].correct_answer
-
-            //Next answer choices
-            let newAnswers = res[currQuestionNum].incorrect_answers
-            newAnswers.push(correctAnswer)
-
-            //Update the UI
-            update(question, shuffle(newAnswers))
+        //Check if the user has answer 10 questions
+        if(checkEndGame(currQuestionNum)) {
+            console.log("You've won")
         }
         else {
-            console.log("you picked the wrong answer")
+            selectedAnswer = fourthOption.innerHTML
+            if(checkAnswer(selectedAnswer, correctAnswer)) {
+                currQuestionNum++;
+                console.log("clicked");
+                console.log(res[currQuestionNum])
+                //Next question
+                question = res[currQuestionNum].question
+    
+                //Next correct answer
+                correctAnswer = res[currQuestionNum].correct_answer
+    
+                //Next answer choices
+                let newAnswers = res[currQuestionNum].incorrect_answers
+                newAnswers.push(correctAnswer)
+    
+                //Update the UI
+                update(question, shuffle(newAnswers))
+            }
+            else {
+                console.log("you picked the wrong answer")
+            }
         }
     })
 })
