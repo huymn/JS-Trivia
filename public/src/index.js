@@ -5,6 +5,9 @@ const secondOption = document.getElementById('B')
 const thirdOption = document.getElementById('C')
 const fourthOption = document.getElementById('D')
 
+//Using the unorm library to normalize unicode characters
+let unorm = require('unorm')
+
 //Current question number that the user is on (range is from 0-9 so 10 questions in total)
 let currQuestionNum = 0;
 
@@ -163,7 +166,7 @@ fetchData().then((res) => {
 
 //Check if the selected answer by the user is correct
 const checkAnswer = (choice, answer) => {
-    return choice === answer
+    return unorm.nfc(choice) === unorm.nfc(answer)
 }
 
 
