@@ -50,11 +50,11 @@ fetchData().then((res) => {
             correctAnswer = res[currQuestionNum].correct_answer
 
             //Next answer choices
-            answers = res[currQuestionNum].incorrect_answers
-            answers.push(correctAnswer)
+            let newAnswers = res[currQuestionNum].incorrect_answers
+            newAnswers.push(correctAnswer)
 
             //Update the UI
-            update(question, shuffle(answers))
+            update(question, shuffle(newAnswers))
         }
         else {
             console.log("you picked the wrong answer")
@@ -75,11 +75,11 @@ fetchData().then((res) => {
             correctAnswer = res[currQuestionNum].correct_answer
 
             //Next answer choices
-            answers = res[currQuestionNum].incorrect_answers
-            answers.push(correctAnswer)
+            let newAnswers = res[currQuestionNum].incorrect_answers
+            newAnswers.push(correctAnswer)
 
             //Update the UI
-            update(question, shuffle(answers))
+            update(question, shuffle(newAnswers))
         }
         else {
             console.log("you picked the wrong answer")
@@ -100,11 +100,11 @@ fetchData().then((res) => {
             correctAnswer = res[currQuestionNum].correct_answer
 
             //Next answer choices
-            answers = res[currQuestionNum].incorrect_answers
-            answers.push(correctAnswer)
+            let newAnswers = res[currQuestionNum].incorrect_answers
+            newAnswers.push(correctAnswer)
 
             //Update the UI
-            update(question, shuffle(answers))
+            update(question, shuffle(newAnswers))
         }
         else {
             console.log("you picked the wrong answer")
@@ -125,11 +125,11 @@ fetchData().then((res) => {
             correctAnswer = res[currQuestionNum].correct_answer
 
             //Next answer choices
-            answers = res[currQuestionNum].incorrect_answers
-            answers.push(shuffle(answers))
+            let newAnswers = res[currQuestionNum].incorrect_answers
+            newAnswers.push(correctAnswer)
 
             //Update the UI
-            update(question, answers)
+            update(question, shuffle(newAnswers))
         }
         else {
             console.log("you picked the wrong answer")
@@ -172,3 +172,7 @@ const shuffle = (array) => {
     return array;
 }
 
+//Check when the user has answer 10 questions
+const checkEndGame = (number) => {
+    return number === 10
+}
